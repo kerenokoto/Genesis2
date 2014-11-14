@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WELCOME</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+
+    <!--start header-->
+
+   <header>
+ 
+    <!--start logo-->
+
+    <%=image_tag "Godcreated.png", :size => '800x500', :class => 'pic'  %>
+    <!-- <a href="#" id="logo"><img src="images/u2.jpg" width="221" height="100" alt="logo"/></a>    
+ -->
+	<!--end logo-->
+	
+   <!--start menu-->
+
+	<nav>
+    <ul>
+    <li><a href="#" class="current">Home</a>
+
+	</li>
+    <li><a href="#">About us</a></li>
+    <li><%= link_to("Events", :controller => 'events')%></li>
+	<li><a href="#">Portfolio</a></li>
+    <li><a href="#">Contact</a></li>
+    
+		
+    </ul>
+    </nav>
+   </header>
+
+		<div class="container">
+		<%= yield %>
+		</div>
+
+	<div id="intro">
+   
+   <div class="group_bannner_right">
+   </div>
+   
+   <header class="group_bannner_left">
+   <hgroup>
+   <h1>ActionChapel</h1>
+   <h2>“So God created the great creatures of the sea and every living and moving thing with which the water teems“    Genesis 1:21
+   </h2>
+   </hgroup>
+   </header>
+   </div>
+ 
+   <!--end container-->
+   
+   <!--start footer-->
+   <!-- <footer>
+   <div class="container">  
+   <div id="FooterTwo"> © 2011 Think simple </div>
+   <div id="FooterTree"> Valid html5, design and code by <a href="http://www.marijazaric.com">marija zaric - creative simplicity</a>   </div> 
+   </div>
+   </footer> -->
+
+</body>
+
+
+</html>

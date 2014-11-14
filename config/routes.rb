@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #get 'welcome/index'
+  root 'welcome#index'
+  #delete 'event/:id' => 'events#destroy', as: :delete_event
   resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
