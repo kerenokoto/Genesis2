@@ -18,7 +18,7 @@
   <div class="control-group">
     <%= f.label :date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :date, :class => 'form-control' %>
+       <%= f.date_select :date, :class => 'form-control', :start_year => 1980, :end_year => 2030 %>
     </div>
     <%= error_span(@event[:date]) %>
   </div>
