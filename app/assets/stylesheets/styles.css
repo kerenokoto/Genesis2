@@ -8,8 +8,7 @@
 ***************************************************/
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li, form, label, legend, caption, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section, summary {
-    margin: 0;
-	padding: 0;
+   	padding: 0;
 	border: 0;
 	outline: 0;
 	font-weight: inherit;
@@ -85,7 +84,7 @@ h1{
 	color:#663366;
 	text-transform:capitalize;
 	text-align:left;
-	margin-left:40px;
+	margin-left:10px;
 
 	
 	}
@@ -107,7 +106,7 @@ h2{
 	text-align:left;
 	width:420px;
 	padding-top:8px;
-	margin-left:40px;
+	margin-left:10px;
 
 
 	}

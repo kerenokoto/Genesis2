@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'authenticate/login'
+  get 'admin', :to => "authenticate#login"
+
+
   #get 'welcome/index'
   root 'welcome#index'
   #delete 'event/:id' => 'events#destroy', as: :delete_event
   resources :events
+  resources :authenticate
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
