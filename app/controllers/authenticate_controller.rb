@@ -12,14 +12,15 @@ class AuthenticateController < ApplicationController
         found_user = Admin.where(:username => params[:username]).first
         if found_user
           authorized_user = found_user.authenticate(params[:password])
-        end
+        end  
       end
+
       if authorized_user
         # TODO: mark user as logged in
         session[:user_id] = authorized_user.id
         session[:username] = authorized_user.username
         flash[:notice] = "You are now logged in as: '#{found_user.username}'"
-        redirect_to(:action => 'index')
+        redirect_to(:controller => 'events')
       else
         flash[:notice] = "Invalid username/password"
         redirect_to(:action => 'login')

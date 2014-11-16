@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'user/index'
+
   get 'authenticate/login'
   get 'admin', :to => "authenticate#login"
 
 
   #get 'welcome/index'
   root 'welcome#index'
+  
   #delete 'event/:id' => 'events#destroy', as: :delete_event
   resources :events
   resources :authenticate
@@ -13,6 +16,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  
+  match ':controller(/:action(/:id))', :via => [:get, :post]
+
   # root 'welcome#index'
 
   # Example of regular route:

@@ -1,0 +1,33 @@
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:venue) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:picture) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.id, event_path(event) %></td>
+        <td><%= event.date %></td>
+        <td><%= event.title %></td>
+        <td><%= event.venue %></td>
+        <td><%= event.description %></td>
+        <td><%= event.picture %></td>
+        <td><%=l event.created_at %></td>
+        <td>
+
+
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      event_path(event), :class => 'btn btn-default btn-xs' %>
+<% end %>
