@@ -1,0 +1,6 @@
+<h1>INTERESTING BIBLE STORIES</h1>
+<% @rss.each do |rss| %>
+<h2> <%= link_to rss.title, "/story/show/?q=#{rss.link}" %></h2>
+<p><%=rss.description.split('.')[0] %></p>
+<%= image_tag rss.media_content_url%>
+<% end %>

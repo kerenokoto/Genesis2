@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class UserController < ApplicationController
   
   def index
@@ -6,4 +8,5 @@ class UserController < ApplicationController
 
   def show
   end
+
 end

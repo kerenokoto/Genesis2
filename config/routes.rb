@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #get 'story/index'=> 'story#index', as: :shows_story
+
   get 'user/index'
 
   get 'authenticate/login'
@@ -7,6 +9,8 @@ Rails.application.routes.draw do
 
   #get 'welcome/index'
   root 'welcome#index'
+   get 'story/index'
+  #get 'news/shows' => 'news#show' as: :show_news
   
   #delete 'event/:id' => 'events#destroy', as: :delete_event
   resources :events
