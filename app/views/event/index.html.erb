@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:venue) %></th>
@@ -18,13 +18,13 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to event.id, event_path(event) %></td>
+       <!--  <td><%= link_to event.id, event_path(event) %></td> -->
         <td><%= event.date %></td>
         <td><%= event.title %></td>
         <td><%= event.venue %></td>
         <td><%= event.description %></td>
         <td><%= event.picture %></td>
-        <td><%=l event.created_at %></td>
+        <td><%= event.created_at.to_formatted_s(:long_ordinal) %></td>
         <td>
 
           <%= link_to t('.show', :default => t("helpers.links.show")),

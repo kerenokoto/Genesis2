@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   #get 'welcome/index'
   root 'welcome#index'
-   get 'story/index'
+   get 'story/index' => 'story#index' #as: :show_story
   #get 'news/shows' => 'news#show' as: :show_news
   
   #delete 'event/:id' => 'events#destroy', as: :delete_event
