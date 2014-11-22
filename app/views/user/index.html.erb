@@ -2,18 +2,22 @@
 <div class = 'row container'>
 <div class="col-md-9">
   
-</div>
-  <div class="col-md-3 search-container">
-    <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search for events">
-          <div class="responsive-form__input--icon__container">
-            <input data-mixpanel-internal-click="1" data-mixpanel-action="Global Header Interaction" data-mixpanel-interaction-type="Click" data-mixpanel-element-name="Search for events submit" data-mixpanel-logged-in-status="Logged In" type="submit" data-role="none" class="js-search-submit js-mx-track-click" value="" alt="Search">
-          </div>
-          <!-- <button class="gbqfb" aria-label="Events Search" name="btnG" id="gbqfb"><span class="gbqfi gb_Qa"></span>
-          </button> -->
+<div style="margin: 20px 20px 0px;">
+<form class="bs-example bs-example-form" role="form">
+    <div class="row">
+      <div class="col-md-offset-6">
+        <div class="input-group">
+          <%= form_tag url: 'problems', method: :get do %>
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "search for event"%>
+              <span class="input-group-btn">
+                  <%= submit_tag "Search", class: "btn btn-primary" %>
+                <% end %>
+              </span>
         </div>
-    </form>
+      </div>
+   </div>
+</form>
+</div>
     </div>
 </div>
 </br>

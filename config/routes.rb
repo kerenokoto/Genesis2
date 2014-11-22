@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  #get 'story/index'=> 'story#index', as: :shows_story
+  resources :expenses
 
+  #get 'story/index'=> 'story#index', as: :shows_story
+  resources :events do
+      member do
+        get 'upvote'
+        get 'downvote'
+    end
+  end
   get 'user/index'
 
   get 'authenticate/login'
   get 'admin', :to => "authenticate#login"
+  get 'expense/index'
 
 
   #get 'welcome/index'

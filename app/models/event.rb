@@ -4,5 +4,5 @@ class Event < ActiveRecord::Base
 	validates :title, presence: true
 	validates :venue, presence: true
 	validates :description, presence: true
-	
+	has_many :votes, dependent: :destroy
 end
