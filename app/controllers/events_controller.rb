@@ -50,17 +50,17 @@ class EventsController < ApplicationController
     end
   end
 
-  def upvote
-    @event = Event.find(params[:id])
-    @event.votes.create
-    redirect_to event_path(@problem)
-  end
+  # def upvote
+  #   @event = Event.find(params[:id])
+  #   @event.votes.create
+  #   redirect_to event_path(@problem)
+  # end
 
-  def downvote
-    @event = Event.find(params[:id])
-    @event.votes.create
-    redirect_to event_path(@problem)
-  end
+  # def downvote
+  #   @event = Event.find(params[:id])
+  #   @event.votes.create
+  #   redirect_to event_path(@problem)
+  # end
 
   # DELETE /events/1
   # DELETE /events/1.json
@@ -81,6 +81,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:date, :title, :venue, :description, :picture ,:upvote, :downvote)
+      params.require(:event).permit(:date, :title, :venue, :description, :picture , :comment, :rating)
     end
 end

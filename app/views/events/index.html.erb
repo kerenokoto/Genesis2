@@ -12,7 +12,8 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:picture) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+   <!--    <th><%=t '.actions', :default => t("helpers.actions") %></th> -->
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,8 @@
         <td><%= event.description %></td>
         <td><%= image_tag(event.picture, :size => '80x80')%></td>
         <td><%= event.created_at.to_formatted_s(:long_ordinal) %></td>
+        <td><%= event.comment %></td>
+        <td><%= event.rating %></td>
         <td>
 
 

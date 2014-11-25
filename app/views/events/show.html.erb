@@ -13,8 +13,10 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @event.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:picture) %>:</strong></dt>
-  <dd><%= image_tag(@event.picture, :width => 600) if @event.picture.present? %>
+  <dd><%= image_tag(@event.picture, :width => 600) if @event.picture.present? %> 
 </dd>
+ <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @event.comment %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -1,0 +1,32 @@
+ <%= form_for(@revenue) do |f| %>
+  <% if @revenue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@revenue.errors.count, "error") %> prohibited this revenue from being saved:</h2>
+
+      <ul>
+      <% @revenue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :tithes %><br>
+    <%= f.text_field :tithes, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :offerings %><br>
+    <%= f.text_field :offerings, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :donations %><br>
+    <%= f.text_field :donations, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :total_revenue %><br>
+    <%= f.text_field :total_revenue, {"onkeypress" => "return isNumber(event)", "disabled" => "disabled"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
