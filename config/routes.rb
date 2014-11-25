@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :expenses
+
+  resources :expenditures
+  resources :revenues
 
   #get 'story/index'=> 'story#index', as: :shows_story
   resources :events do
@@ -12,8 +14,6 @@ Rails.application.routes.draw do
 
   get 'authenticate/login'
   get 'admin', :to => "authenticate#login"
-  get 'expense/index'
-
 
   #get 'welcome/index'
   root 'welcome#index'
@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   
   #delete 'event/:id' => 'events#destroy', as: :delete_event
   resources :events
-  resources :authenticate
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

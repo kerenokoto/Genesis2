@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ExpenseTest < ActiveSupport::TestCase
+class RevenueControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

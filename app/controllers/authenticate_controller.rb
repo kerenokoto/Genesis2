@@ -2,6 +2,7 @@ class AuthenticateController < ApplicationController
   
   layout 'admin'
   	before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+    #before_action :confirm_logged_in, :except => [:login, :logout]
   
     def login
     	#login form
@@ -20,7 +21,7 @@ class AuthenticateController < ApplicationController
         session[:user_id] = authorized_user.id
         session[:username] = authorized_user.username
         flash[:notice] = "You are now logged in as: '#{found_user.username}'"
-        redirect_to(:controller => 'events')
+        redirect_to(:controller => 'events', :action => 'index')
       else
         flash[:notice] = "Invalid username/password"
         redirect_to(:action => 'login')

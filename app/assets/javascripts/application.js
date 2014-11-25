@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+// var salary = document.getElementById("expenditure_salary");
+// a = parseFloat(salary.value);
+
+
+// var maintenance = document.getElementById("expenditure_maintenance");
+// b = parseFloat(maintenance.value);
+
+// var utility = document.getElementById("expenditure_utility_bills")
+// c = parseFloat(utility.value)

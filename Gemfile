@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 gem 'simple-rss'
@@ -33,7 +34,7 @@ gem 'spring',        group: :development
 
 #gem 'pry'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -45,3 +46,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'mechanize', '~> 2.7.3'
+# group :development do
+#   gem "better_errors"
+# end

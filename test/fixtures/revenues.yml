@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tithes: 1.5
+  offerings: 1.5
+  donations: 1.5
+  misc_income: 1.5
+
+two:
+  tithes: 1.5
+  offerings: 1.5
+  donations: 1.5
+  misc_income: 1.5

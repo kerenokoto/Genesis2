@@ -1,0 +1,74 @@
+<%= form_for(@expenditure) do |f| %>
+  <% if @expenditure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
+
+      <ul>
+      <% @expenditure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br>
+    <%= f.text_field :salary, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :maintenance %><br>
+    <%= f.text_field :maintenance, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :utility_bills %><br>
+    <%= f.text_field :utility_bills, {"onkeypress" => "return isNumber(event)"} %>
+  </div>
+  <div class="field">
+    <%= f.label :total_expenditure %><br>
+    <%= f.text_field :total_expenditure, {"onkeypress" => "return isNumber(event)", "disabled" => "disabled"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+calculate = function(){
+  var a = $('#expenditure_salary');
+  var b = $('#expenditure_maintenance');
+  var c = $('#expenditure_utility_bills');
+
+  if(a.val() == '' || b.val()=='' || c.val()==''){
+    return;
+  }
+
+  var total = parseFloat(a.val()) + parseFloat(b.val()) + parseFloat(c.val());
+  $("#expenditure_total_expenditure").val(total);
+};
+$("#expenditure_salary").on("change", calculate);
+$("#expenditure_maintenance").on("change", calculate);
+$("#expenditure_utility_bills").on("change", calculate);
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
+
+<!-- revenue here -->
+
+
+
+
+
+
+<!-- end of revenue content -->

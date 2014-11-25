@@ -1,0 +1,63 @@
+<h1>Listing expenditures</h1>
+
+<div="container">
+  
+      <li>Date</li>
+      <li>Salary</li>
+      <li>Maintenance</li>
+      <li>Utility bills</li>
+      <li>Total expenditure</li>
+      <th colspan="3"></th>
+
+
+  <tbody>
+    <% @expenditures.each do |expenditure| %>
+      
+        <li><%= expenditure.date %></li>
+        <li><%= expenditure.salary %></li>
+        <li><%= expenditure.maintenance %></li>
+        <li><%= expenditure.utility_bills %></li>
+        <li><%= expenditure.total_expenditure %></li>
+        <td><%= link_to 'Show', expenditure %></td>
+        <td><%= link_to 'Edit', edit_expenditure_path(expenditure) %></td>
+        <td><%= link_to 'Destroy', expenditure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     
+    <% end %>
+  </tbody>
+
+
+<br>
+</div>
+
+<!-- revenue here -->
+<div = 'row'  style='margin-left:160px'>
+<div="container">
+  
+      <li>Tithe</li>
+      <li>Offerings</li>
+      <li>Donations</li>
+      <li>Misc_income</li>
+      <th colspan="3"></th>
+
+
+  <tbody>
+    <% @revenues.each do |revenue| %>
+      
+        <li><%= revenue.tithe %></li>
+        <li><%= revenue.offerings %></li>
+        <li><%= revenue.donations %></li>
+        <li><%= revenue.misc_income %></li>
+        <td><%= link_to 'Show', revenue %></td>
+        <td><%= link_to 'Edit', edit_revenue_path(revenue) %></td>
+        <td><%= link_to 'Destroy', revenue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     
+    <% end %>
+  </tbody>
+
+
+<br>
+</div>
+</div>
+<!-- end of revenue section -->
+
+<!-- <%= link_to 'New Revenue', new_revenue_path %> -->

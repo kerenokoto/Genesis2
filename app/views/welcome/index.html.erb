@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>WELCOME</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,17 +23,18 @@
    <!--start menu-->
 
 	<nav>
-    <ul>s 
+    <ul>
     <li><a href="#" class="current">Home</a>
 
 	</li>
     <li><a href="#">About us</a></li>
+
     <li><%= link_to 'Login', 'authenticate/login'%></li>
     <li><%= link_to("User", 'user/index')%></li>
     <li><%= link_to("Articles", 'story/index')%></li>
-    <li><%= link_to("Finances", 'expenses/index')%></li>
-    
-		
+    <!-- <li><%= link_to("Finances", expenditures_path )%></li> -->
+     <li><%= link_to("Finances", expenditures_path)%></li>
+	
     </ul>
     </nav>
    </header>
